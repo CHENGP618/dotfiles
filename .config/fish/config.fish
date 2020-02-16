@@ -9,14 +9,15 @@
 
 # http://hackercodex.com/guide/install-fish-shell-mac-ubuntu/#basic-configuration
 # set -Ux EDITOR atom
-echo "Fish config loaded"
 
 set -g -x fish_greeting ''
 abbr -a g "git"
 abbr -a h "heroku"
-complete -c c  -a "(__fish_complete_directories (~/RubyOnRails/))"
-set -gx PATH  /usr/local/heroku/bin $PATH
-
+abbr -a e "exit"
+abbr -a l "ll"
+# complete -c c  -a "(__fish_complete_directories (~/RubyOnRails/))"
+# set -gx PATH  /usr/local/heroku/bin $PATH
+set -gx  EDITOR /usr/local/bin/atom
 
 set rbenv_bin "$HOME/.rbenv/bin"
 set brew_rbenv "/usr/local/var/rbenv/shims"
@@ -54,3 +55,8 @@ set -g fish_color_valid_path --underline
 
 set -g fish_color_dimmed 555
 set -g fish_color_separator 999
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/Cheng/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/Cheng/Downloads/google-cloud-sdk/path.fish.inc'; end

@@ -1,14 +1,21 @@
 [alias]
 	co = checkout
 	br = branch
+	cp = cherry-pick
+	ci = commit
+	last = log -1
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	unstage = reset HEAD
 [core]
 	excludesfile = /Users/Cheng/.gitignore_global
+	editor = atom --wait
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [user]
 	email = chengp618@gmail.com
 	name = CHENG618
+[push]
+	default = current
+[credential]
+	helper = store
